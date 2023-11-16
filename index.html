@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light-On-Off</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+         font-family: cursive;
+            word-spacing: normal;
+        }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: teal;
+        color: #fff;
+        height: 100vh;
+    }
+    .main-heading h1{
+        margin-bottom: 60px;
+        font-size: 50px;
+        margin-top: -50px;
+
+    }
+    button{
+        display: inline-block;
+        background-color: #f8b627;
+        color: #f4f4f4;
+        font-size: 16px;
+        border-radius: 3px;
+        transition: 400ms;
+        text-decoration: none;
+        padding: 10px;
+        z-index: 100000;
+    }
+    img {
+            width: 200px;
+            cursor: pointer;
+        }
+
+        img.with-shadow {
+            filter: drop-shadow(10px 10px 20px #f8b627);
+        }
+    /* img.no-shadow {
+            filter: none;
+        } */
+        @media screen and (max-width: 480px) {
+            h1{
+                font-size: 12px;
+            }
+            img{
+                width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-heading">
+        <h1>Tap on the bulb and turn the Light On</h1>
+        <!-- <button onclick="document.getElementById('myImage').src = 'lighton.gif'">Turn On the Light</button> -->
+        <img src="pic_bulboff.png" alt="Light-Off" id="myImage" onclick="changeImage()">
+
+        <!-- <button onclick="document.getElementById('myImage').src = 'pic_bulboff.gif'">Turn Off the Light</button> -->
+    </div>
+    <script>
+         function changeImage() {
+            var image = document.getElementById('myImage');
+            image.classList.toggle('with-shadow'); // Toggle the 'with-shadow' class
+            if (image.classList.contains('with-shadow')) {
+                image.src = "bulbon.png";
+            } else {
+                image.src = "pic_bulboff.png";
+            }
+        }
+    </script>
+</body>
+</html>
